@@ -27,6 +27,36 @@ body {
   top: 0;
   width: 300px;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.projects-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projects-list li {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.projects-list li:hover {
+  cursor: pointer;
+  background-color: #444;
+}
+
+/* .projects-list li:not(.active):hover {
+  cursor: pointer;
+} */
+
+.projects-list .active {
+  background-color: #444;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 7px;
 }
 
 .notes-container {
