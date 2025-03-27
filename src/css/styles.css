@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
 :root {
+  --bg-dark: #222;
   --padding: 16px;
 }
 
@@ -22,6 +23,7 @@ body {
 
 .menubar {
   background-color: rgb(46, 46, 46);
+  border-right: 2px solid rgba(255, 255, 255, 0.226);
   padding: var(--padding);
   position: fixed;
   top: 0;
@@ -39,14 +41,41 @@ body {
   gap: 8px;
 }
 
+.projects {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
 .projects-list li {
   padding: 8px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .projects-list li:hover {
   cursor: pointer;
   background-color: #444;
+}
+
+.projects-list img {
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.projects-list li:hover img,
+.active img {
+  opacity: 1;
 }
 
 /* .projects-list li:not(.active):hover {
@@ -59,17 +88,40 @@ body {
   padding: 7px;
 }
 
-.notes-container {
+.content {
   padding: var(--padding);
   background-color: rgb(34, 34, 34);
+  margin-left: 300px;
+}
+
+.flexwrap {
+  margin-bottom: var(--padding);
+  display: flex;
+  gap: var(--padding);
+}
+
+.notes-container {
   display: grid;
   gap: var(--padding);
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-left: 300px;
 }
 
 .note {
   background-color: #333;
   border-radius: 8px;
   padding: var(--padding);
+}
+
+.pill {
+  padding: 4px 16px;
+  border-radius: 90px;
+  background-color: #0a0a0a;
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.295);
+}
+
+.pill:hover {
+  border-color: white;
+  background-color: #333;
+  cursor: pointer;
 }
