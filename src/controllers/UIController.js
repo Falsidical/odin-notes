@@ -1,20 +1,17 @@
 import { icons } from '../icons';
 
-export class UIManager {
+export class UIController {
   constructor(projectManager) {
     this.projectsList = document.querySelector('.projects-list');
     this.notesContainer = document.querySelector('.notes-container');
+    this.forms = document.querySelector('.forms');
     this.projectManager = projectManager;
     this.newNoteBtn = document.querySelector('#new-note');
+    this.newNoteForm = document.querySelector('#new-note-form');
+    this.newProjectForm = document.querySelector('#new-project-form');
     document.querySelector('#new-project').addEventListener('click', () => {
       this.createNewProject();
     });
-  }
-
-  createNewProject() {
-    let title = prompt('Project Name?');
-    this.projectManager.createProject(title);
-    this.createProjectListItem(this.projectManager.projects[this.projectManager.projects.length - 1]);
   }
 
   createProjectList() {
@@ -63,11 +60,20 @@ export class UIManager {
     });
   }
 
+  createNewProject() {
+    //let title = prompt('Project Name?');
+    //this.projectManager.createProject(title);
+    //this.createProjectListItem(this.projectManager.projects[this.projectManager.projects.length - 1]);
+    this.newProjectForm.style.display = 'flex';
+    this.forms.classList.toggle('show');
+  }
+
   createNoteDialog(project) {
-    console.log(project);
-    const title = prompt('Note title');
-    const content = prompt('Note content');
-    project.createSimpleNote(title, content);
-    this.displayNotes(project.notes);
+    //const title = prompt('Note title');
+    //const content = prompt('Note content');
+    //project.createSimpleNote(title, content);
+    //this.displayNotes(project.notes);
+    this.newNoteForm.style.display = 'flex';
+    this.forms.classList.toggle('show');
   }
 }
