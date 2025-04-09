@@ -5,5 +5,10 @@ export class ToDoNote extends SimpleNote {
     super(title, content);
     this.dueDate = dueDate;
     this.priority = priority;
+    this.isDone = false;
+  }
+
+  toggleComplete() {
+    this.isDone = !this.isDone;
   }
 }
